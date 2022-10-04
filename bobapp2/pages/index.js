@@ -1,15 +1,14 @@
 import Head from 'next/head'
 import { connectToDatabase } from "../util/mongodb";
 import React, { useState, useEffect } from 'react';
-// import styles from '../styles/Home.module.css';
-// import '../styles/globals.css';
 import Collection from './Collection';
+import { Input } from 'semantic-ui-react';
+import Button from './Button';
 
 /*
 getServerSideProps establishes connection with MongoDB database
 and returns destructured data
 */
-
 export async function getServerSideProps() {
   
   //await connection to mongodb database
@@ -27,26 +26,38 @@ export async function getServerSideProps() {
 }
 
 //Home function returns html for Home page 
-export default function Home({properties}) {
+export default function Home( { properties }, {tagSearch} ) {
 
-    // const [term, setTerm] = useState("")
-    const [searchData, setSearchData] = useState({properties})
-    // const [collection, setCollection] = useState({properties})
-  
-    useEffect (() => {
-      // const search = async () => {
-        // const { data } = await getServerSideProps();
-        setSearchData({properties})
-      // } 
+    // const [data, setData] = useState([])
+    const [visiblePhotos, setVisiblePhotos] = useState(properties);
+    const [searchTerm, setSearchTerm] = useState("");
+    
+    
 
-    // if(searchData) {
-    //   search()
-    // }
-   }, [])
+    // searchItems handles the searchbar by updating the data variable sent to children components
+    const searchItems = (searchValue) => {
+      setSearchTerm(searchValue)
+      if (searchTerm !=="") {
+        const filteredData = properties.filter((item) => {
+          console.log(item.tags);
+          return Object.values(item.tags).join("").toLowerCase().includes(searchTerm.toString().toLowerCase())
+      })
+      setVisiblePhotos(filteredData)
+      }
+    }
 
-    //every keypress re-renders component
-    console.log({properties})
+    const searchTag = (tagSearch) => {
+      if (tagSearch  !=="") {
+      console.log(tagSearch)
+      const filteredData = properties.filter((item) => {
+        return Object.values(item.tags).join("").toLowerCase().includes(tagSearch.toLowerCase())
+      })
+      setVisiblePhotos(filteredData)
+    }}
 
+    /*this is the body the application with Input that collects searchTerm and a return of Collection
+    with the data variable as an argument. data variable is conditionl upon searchTerm  
+    */
     return (
         <div>
           <Head>
@@ -55,15 +66,32 @@ export default function Home({properties}) {
             <link rel="icon" href="/favicon.ico" />
           </Head>
           <main>
-            <p>this is a test</p>
-            <div className="columns-2xs gap-4 px-3">
-              <div className=""></div>
-                <Collection properties={properties}/>
-              </div>
+          <div>
+          <h1 className="uppercase">Bob Retuer Photo Archive [Prototype]</h1>
+        </div>
+        <div>
+          <div className="flex flex-col justify-center items-center ">
+            <Input className="mt-20 mb-5 inline-block" icon='search'
+                placeholder="It Don't Matter"
+                term={searchTerm}
+                onChange={(e) => searchItems(e.target.value)}
+            />
+          </div>
+        </div>
+          <div className="columns-2xs gap-4 px-3">
+            <div className="">
+                    <div>
+                      <Collection 
+                      searchTag={searchTag}
+                      tagSearch={tagSearch}
+                      properties={visiblePhotos}/>
+                    </div>
+            </div>
+          </div>
           </main>
-          <footer>
-
-          </footer>
+            <footer>
+                
+            </footer>
         </div>
     )
   }

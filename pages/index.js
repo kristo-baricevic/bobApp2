@@ -68,7 +68,7 @@ export default function Home( { properties }, {tagSearch} ) {
           </div>
         <div>
           <div className="flex justify-center items-center">
-            <div className="flex w-fit mt-6 pt-20 pb-5 align-middle justify-center items-center">
+            <div className="flex w-fit mt-8 pt-20 pb-5 align-middle justify-center items-center">
               <Input
                 type="text"
                 className="block w-100px border-2 rounded border-stone-700"

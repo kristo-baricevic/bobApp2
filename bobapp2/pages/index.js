@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { connectToDatabase } from "../util/mongodb";
 import React, { useState, useEffect } from 'react';
-import Collection from './Collection';
+import Collection from '../Components/Collection';
 import { Input } from 'semantic-ui-react';
 
 /*

@@ -4,9 +4,9 @@ module.exports = {
     './pages/api/properties.js',
     './pages/_app.js',
     './pages/index.js',
-    './pages/Collection.js',
-    './pages/Button.js',
-    './pages/Photocard.js'
+    './Components/Collection.js',
+    './Components/Button.js',
+    './Components/Photocard.js'
   ],
   presets: [],
   darkMode: 'media', // or 'class'

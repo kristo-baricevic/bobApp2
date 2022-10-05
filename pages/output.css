@@ -504,6 +504,10 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
 .ml-1 {
   margin-left: 0.25rem;
 }
@@ -606,8 +610,8 @@ video {
   padding-bottom: 1rem;
 }
 
-.pt-40 {
-  padding-top: 10rem;
+.pt-20 {
+  padding-top: 5rem;
 }
 
 .pb-5 {

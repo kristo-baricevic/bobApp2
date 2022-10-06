@@ -3,7 +3,6 @@ import { connectToDatabase } from "../util/mongodb";
 import React, { useState, useEffect, useRef } from 'react';
 import Collection from '../Components/Collection';
 import ResetSearch from '../Components/ResetSearch';
-import { Input } from 'semantic-ui-react';
 import SearchBar from '../Components/SearchBar';
 
 /*
@@ -54,10 +53,12 @@ export default function Home( { properties }, {tagSearch}, value) {
       setVisiblePhotos(filteredData)
     }}
 
+    // handles updating via search bar entry
     const setValueFromInput = (value) => {
       searchItems(value)
     };
 
+    // resets the view and clears search bar
     const resetSearchBar = () => {
       setSearchTerm("");
       console.log("received");
@@ -87,12 +88,11 @@ export default function Home( { properties }, {tagSearch}, value) {
                 value={searchTerm}
                 setValueFromInput={setValueFromInput}
               />
-              <ResetSearch searchTerm={searchTerm} setSearchTerm={setSearchTerm} resetSearchBar={resetSearchBar} />
-              {/* <button 
-                className="border-2 ml-1 rounded border-black px-1"
-                onClick={()=>setVisiblePhotos(properties)} 
-              > Reset
-              </button> */}
+              <ResetSearch 
+                searchTerm={searchTerm} 
+                setSearchTerm={setSearchTerm} 
+                resetSearchBar={resetSearchBar} 
+              />
             </div>
           </div>
         </div>

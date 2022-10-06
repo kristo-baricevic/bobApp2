@@ -4,12 +4,15 @@ export default function Button ({tag, searchTag}) {
         const [btnState, setBtnState] = useState(false);
         const [tagSearch, setTagSearch] = useState("");
 
+        let toggleClassCheck = btnState ? ' active': null;
+
+
         const handleClick = (tag) => {
             console.log(tag)
             searchTag(tag)
+            toggleClassCheck
         }
     
-        let toggleClassCheck = btnState ? ' active': null;
     
         return (
             <button

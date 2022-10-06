@@ -6,7 +6,9 @@ module.exports = {
     './pages/index.js',
     './Components/Collection.js',
     './Components/Button.js',
-    './Components/Photocard.js'
+    './Components/Photocard.js',
+    './Components/ResetSearch.js',
+    './Components/SearchBar.js'
   ],
   presets: [],
   darkMode: 'media', // or 'class'

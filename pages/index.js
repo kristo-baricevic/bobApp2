@@ -1,8 +1,10 @@
 import Head from 'next/head'
 import { connectToDatabase } from "../util/mongodb";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Collection from '../Components/Collection';
+import ResetSearch from '../Components/ResetSearch';
 import { Input } from 'semantic-ui-react';
+import SearchBar from '../Components/SearchBar';
 
 /*
 getServerSideProps establishes connection with MongoDB database
@@ -25,7 +27,7 @@ export async function getServerSideProps() {
 }
 
 //Home function returns html for Home page 
-export default function Home( { properties }, {tagSearch} ) {
+export default function Home( { properties }, {tagSearch}, value) {
 
     const [visiblePhotos, setVisiblePhotos] = useState(properties);
     const [searchTerm, setSearchTerm] = useState("");
@@ -44,13 +46,23 @@ export default function Home( { properties }, {tagSearch} ) {
 
     // handles updating visblePhotos by clicking on a tag
     const searchTag = (tagSearch) => {
-      if (tagSearch  !=="") {
+      if (tagSearch !=="") {
       console.log(tagSearch)
       const filteredData = properties.filter((item) => {
         return Object.values(item.tags).join("").toLowerCase().includes(tagSearch.toLowerCase())
       })
       setVisiblePhotos(filteredData)
     }}
+
+    const setValueFromInput = (value) => {
+      searchItems(value)
+    };
+
+    const resetSearchBar = () => {
+      setSearchTerm("");
+      console.log("received");
+      setVisiblePhotos(properties);
+    }
 
     /*this is the body the application with Input that collects searchTerm and a return of Collection
     with the data variable as an argument. data variable is conditionl upon searchTerm  
@@ -69,18 +81,18 @@ export default function Home( { properties }, {tagSearch} ) {
         <div>
           <div className="flex justify-center items-center">
             <div className="flex w-fit mt-9 pt-20 pb-5 align-middle justify-center items-center">
-              <Input
-                type="text"
-                className="block w-100px border-2 rounded border-stone-700"
-                placeholder="Type to search..."
-                term={searchTerm}
-                onChange={(e) => searchItems(e.target.value)}
+              <SearchBar 
+                searchTerm={searchTerm}
+                setSearchTerm={setSearchTerm}
+                value={searchTerm}
+                setValueFromInput={setValueFromInput}
               />
-              <button 
+              <ResetSearch searchTerm={searchTerm} setSearchTerm={setSearchTerm} resetSearchBar={resetSearchBar} />
+              {/* <button 
                 className="border-2 ml-1 rounded border-black px-1"
                 onClick={()=>setVisiblePhotos(properties)} 
               > Reset
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

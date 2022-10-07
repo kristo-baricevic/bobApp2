@@ -4,6 +4,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import Collection from '../Components/Collection';
 import ResetSearch from '../Components/ResetSearch';
 import SearchBar from '../Components/SearchBar';
+import ShuffleButton from '../Components/ShuffleButton';
+import { useRouter } from 'next/router';
 
 /*
 getServerSideProps establishes connection with MongoDB database
@@ -15,7 +17,7 @@ export async function getServerSideProps() {
   const { db } = await connectToDatabase();
 
   //parse data
-  const data = await db.collection("sample_photoApp").find({}).limit(80);
+  const data = await db.collection("sample_photoApp").aggregate([{$sample: {size: 80 }}]).limit(80);
   const arrayData = await data.toArray();
   const parsedData = JSON.parse(JSON.stringify(arrayData));
 
@@ -30,6 +32,8 @@ export default function Home( { properties }, {tagSearch}, value) {
 
     const [visiblePhotos, setVisiblePhotos] = useState(properties);
     const [searchTerm, setSearchTerm] = useState("");
+
+    const router = useRouter();
 
     // searchItems handles the searchbar by updating visiblePhotos
     const searchItems = (searchValue) => {
@@ -65,6 +69,13 @@ export default function Home( { properties }, {tagSearch}, value) {
       setVisiblePhotos(properties);
     }
 
+    // shuffles photos
+    const shufflePhotos = () => {
+      router.replace(router.asPath);
+      console.log('shuffle');
+      setVisiblePhotos(properties);
+    }
+
     /*this is the body the application with Input that collects searchTerm and a return of Collection
     with the data variable as an argument. data variable is conditionl upon searchTerm  
     */
@@ -93,6 +104,9 @@ export default function Home( { properties }, {tagSearch}, value) {
                 searchTerm={searchTerm} 
                 setSearchTerm={setSearchTerm} 
                 resetSearchBar={resetSearchBar} 
+              />
+              <ShuffleButton 
+                shufflePhotos={shufflePhotos}
               />
             </div>
           </div>

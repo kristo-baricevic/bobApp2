@@ -20,10 +20,10 @@ export async function getServerSideProps() {
   const data = await db.collection("sample_photoApp").aggregate([{$sample: {size: 80 }}]).limit(80);
   const arrayData = await data.toArray();
   const parsedData = JSON.parse(JSON.stringify(arrayData));
-
+ 
   //return object props with parsed pata
   return {
-    props: { properties: parsedData },
+    props: { properties: parsedData},
   }
 }
 
@@ -71,9 +71,10 @@ export default function Home( { properties }, {tagSearch}, value) {
 
     // shuffles photos
     const shufflePhotos = () => {
-      router.replace(router.asPath);
-      console.log('shuffle');
-      setVisiblePhotos(properties);
+      // setSearchTerm("")
+      // router.replace(router.asPath);
+      router.reload();
+      // setVisiblePhotos(properties);
     }
 
     /*this is the body the application with Input that collects searchTerm and a return of Collection
@@ -107,6 +108,8 @@ export default function Home( { properties }, {tagSearch}, value) {
               />
               <ShuffleButton 
                 shufflePhotos={shufflePhotos}
+                setVisiblePhotos={setVisiblePhotos}
+                properties={properties}
               />
             </div>
           </div>

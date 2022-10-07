@@ -70,14 +70,29 @@ h1 {
   color: white;
 }
 
-/* .pill:not(.pill--selected):hover {
+.pill:not(.pill--selected):hover {
   background: #cccccc;
   cursor: pointer;
 
-} */
+}
 
 .pill--selected {
   background: teal;
+}
+
+.download {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 12px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 12px;
+}
+
+/* Darker background on mouse-over */
+.download:hover {
+  background-color: black;
 }
 
 .tryAgain {

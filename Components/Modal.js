@@ -1,21 +1,21 @@
 import React, { useState } from "react";
+import { saveAs } from 'file-saver';
+
 
 
 export default function Modal ({property} ) {
     const [modal, setModal] = useState(false)
+    const downloadImage = () => {
+      saveAs(property.url, 'image.jpg')
+    }
 
     const toggleModal = () => {
         setModal(modal => !modal);
     }
     
-    // if(modal) {
-    //     document.body.classList.add('active-modal')
-    //   } else {
-    //     document.body.classList.remove('active-modal')
-    //   }
-    
   return ( 
         <>
+          
           <img src={property.url} onClick={toggleModal}/>
           {modal && (
             <div className="modal">

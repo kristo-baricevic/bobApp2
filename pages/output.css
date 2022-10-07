@@ -508,12 +508,12 @@ video {
   margin-top: 2.25rem;
 }
 
-.ml-1 {
-  margin-left: 0.25rem;
-}
-
 .mb-2 {
   margin-bottom: 0.5rem;
+}
+
+.ml-1 {
+  margin-left: 0.25rem;
 }
 
 .block {
@@ -566,14 +566,14 @@ video {
   border-width: 2px;
 }
 
-.border-stone-700 {
-  --tw-border-opacity: 1;
-  border-color: rgb(68 64 60 / var(--tw-border-opacity));
-}
-
 .border-black {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+
+.border-stone-700 {
+  --tw-border-opacity: 1;
+  border-color: rgb(68 64 60 / var(--tw-border-opacity));
 }
 
 .bg-slate-100 {
@@ -590,11 +590,6 @@ video {
   padding: 1.5rem;
 }
 
-.px-1 {
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-}
-
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -608,6 +603,11 @@ video {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
 }
 
 .pt-20 {
@@ -720,14 +720,29 @@ h1 {
   color: white;
 }
 
-/* .pill:not(.pill--selected):hover {
+.pill:not(.pill--selected):hover {
   background: #cccccc;
   cursor: pointer;
-
-} */
+}
 
 .pill--selected {
   background: teal;
+}
+
+.download {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 12px;
+  cursor: pointer;
+  font-size: 10px;
+  margin-top: 12px;
+}
+
+/* Darker background on mouse-over */
+
+.download:hover {
+  background-color: black;
 }
 
 .tryAgain {

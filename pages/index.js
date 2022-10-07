@@ -15,7 +15,7 @@ export async function getServerSideProps() {
   const { db } = await connectToDatabase();
 
   //parse data
-  const data = await db.collection("sample_photoApp").find({}).limit(20);
+  const data = await db.collection("sample_photoApp").find({}).limit(40);
   const arrayData = await data.toArray();
   const parsedData = JSON.parse(JSON.stringify(arrayData));
 

@@ -6,13 +6,11 @@ export default function Button ({tag, searchTag}) {
 
         let toggleClassCheck = btnState ? ' active': null;
 
-
         const handleClick = (tag) => {
             console.log(tag)
             searchTag(tag)
             toggleClassCheck
         }
-    
     
         return (
             <button

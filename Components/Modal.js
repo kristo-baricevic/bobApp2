@@ -15,7 +15,7 @@ export default function Modal ({property} ) {
     
   return ( 
         <>
-          
+          <div>
           <img src={property.url} onClick={toggleModal}/>
           {modal && (
             <div className="modal">
@@ -25,7 +25,8 @@ export default function Modal ({property} ) {
                     </div>
                 </div>
             </div>
-            )}
-          </>
+            )}        
+          </div>
+        </>
   );
 }

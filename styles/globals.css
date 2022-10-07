@@ -5,10 +5,12 @@
 @tailwind utilities;
 
 main {
-  background-color: #cccccc;
-  min-height: 100%;
+  background-color: #cccccc
 }
 
+.background {
+  background-color: #cccccc
+}
 .modal, .overlay {
   width: 100vw;
   height: 100vh;

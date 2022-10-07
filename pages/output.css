@@ -655,8 +655,11 @@ video {
 }
 
 main {
-  background-color: #cccccc;
-  min-height: 100%;
+  background-color: #cccccc
+}
+
+.background {
+  background-color: #cccccc
 }
 
 .modal, .overlay {
@@ -735,7 +738,7 @@ h1 {
   color: white;
   padding: 12px 12px;
   cursor: pointer;
-  font-size: 10px;
+  font-size: 16px;
   margin-top: 12px;
 }
 

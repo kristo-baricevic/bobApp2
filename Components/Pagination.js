@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 
+
 export default function Pagination ( { nPages, currentPage, setCurrentPage, visiblePhotos, setVisiblePhotos } ) {
 
 
@@ -19,18 +20,18 @@ export default function Pagination ( { nPages, currentPage, setCurrentPage, visi
     
     return (
         <nav>
-        <div className="w-full">
+           
+        <div className="w-full mt-4">
           <div className="flex justify-center items-center">
             <ul className="pagination">
                 <li className="pagination">
                     <a className="pagination" 
                         onClick={prevPage} 
                         href='#'>
-                        
-                        Previous
+                        <i class="fa-solid fa-square-caret-left fa-4x"></i>
                     </a>
                 </li>
-                {pageNumbers.map(pgNumber => (
+                {/* {pageNumbers.map(pgNumber => (
                     <li key={pgNumber} 
                         className= {`pagination ${currentPage == pgNumber ? 'active' : ''} `} >
 
@@ -41,13 +42,12 @@ export default function Pagination ( { nPages, currentPage, setCurrentPage, visi
                             {pgNumber}
                         </a>
                     </li>
-                ))}
+                ))} */}
                 <li className="pagination">
                     <a className="pagination" 
                         onClick={nextPage}
                         href='#'>
-                        
-                        Next
+                        <i class="fa-solid fa-square-caret-right fa-4x"></i>
                     </a>
                 </li>
             </ul>

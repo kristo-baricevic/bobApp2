@@ -512,6 +512,10 @@ video {
   margin-left: 0.25rem;
 }
 
+.mt-4 {
+  margin-top: 1rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -618,10 +622,6 @@ video {
   padding-bottom: 0.75rem;
 }
 
-.pt-20 {
-  padding-top: 5rem;
-}
-
 .pt-1 {
   padding-top: 0.25rem;
 }
@@ -708,7 +708,7 @@ h1 {
   font-size: 24px;
   padding-top: 15px;
   padding-bottom: 15px;
-  position:fixed;
+  /* position:fixed; */
   width: 100%;
 }
 

@@ -26,11 +26,11 @@ export default function SearchFilter ( { parsedData, visiblePhotos, setVisiblePh
 
     return (
         <>
-            <div className=" w-full">    
+            <div className="w-full">    
                 <div className="">
                     <div className="">
                         <div>
-                            <div className="pt-20">
+                            <div className="">
                                 <Pagination
                                     nPages = { nPages }
                                     currentPage = { currentPage } 

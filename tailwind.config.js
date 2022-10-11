@@ -6,9 +6,14 @@ module.exports = {
     './pages/index.js',
     './Components/Collection.js',
     './Components/Button.js',
+    '.Components/Modal.js',
     './Components/Photocard.js',
     './Components/ResetSearch.js',
-    './Components/SearchBar.js'
+    './Components/SearchBar.js',
+    './Components/Pagination.js',
+    './Components/SearchFilter.js',
+    './Components/NavigationBar.js',
+    './Components/ShuffleButton.js'
   ],
   presets: [],
   darkMode: 'media', // or 'class'

@@ -2,6 +2,7 @@ import Button from "./Button";
 import Modal from "./Modal";
 
 export default function Photocard ({property, searchTag, tagSearch} ) {
+
   return ( 
     <>
     <div className="pb-3">

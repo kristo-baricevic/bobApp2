@@ -16,8 +16,7 @@ export default function ShuffleButton ({ searchTerm, properties, setSearchTerm, 
             value={searchTerm}
             className="border-2 ml-1 rounded border-black px-1"
             onClick={handleClick}
-            shufflePhotos={shufflePhotos}
-            setVisiblePhotos={setVisiblePhotos}
+            setvisiblephotos={setVisiblePhotos}
             > Shuffle
         </button>
         </>

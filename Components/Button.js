@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState } from 'react';
+
 
 export default function Button ({tag, searchTag}) {
         const [btnState, setBtnState] = useState(false);
@@ -7,14 +8,15 @@ export default function Button ({tag, searchTag}) {
         let toggleClassCheck = btnState ? ' active': null;
 
         const handleClick = (tag) => {
-            console.log(tag)
             searchTag(tag)
-            toggleClassCheck
+            console.log(tag)
+            
+            // toggleClassCheck
         }
     
         return (
             <button
-            tagSearch={tagSearch}
+            tagsearch={tagSearch}
             searchTag={searchTag}
             className={`pill btn${toggleClassCheck}`}
             onClick={(tag)=>handleClick(tag.target.firstChild.data)}

@@ -1,60 +1,67 @@
 import Head from 'next/head'
 import { connectToDatabase } from "../util/mongodb";
-import React, { useState, useEffect, useRef } from 'react';
-import Collection from '../Components/Collection';
-import ResetSearch from '../Components/ResetSearch';
-import SearchBar from '../Components/SearchBar';
-import ShuffleButton from '../Components/ShuffleButton';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
-/*
-getServerSideProps establishes connection with MongoDB database
-and returns destructured data
-*/
+import SearchFilter from '../Components/SearchFilter';
+
 export async function getServerSideProps() {
-  
+
   //await connection to mongodb database
   const { db } = await connectToDatabase();
 
   //parse data
-  const data = await db.collection("sample_photoApp").aggregate([{$sample: {size: 80 }}]).limit(80);
+  const data = await db.collection("sample_photoApp").aggregate([{$sample: {size: 150 }}]).limit(150);
   const arrayData = await data.toArray();
   const parsedData = JSON.parse(JSON.stringify(arrayData));
+  // const dataClone = parsedData;
  
   //return object props with parsed pata
   return {
-    props: { properties: parsedData},
+    props: { parsedData }
   }
 }
 
-//Home function returns html for Home page 
-export default function Home( { properties }, {tagSearch}, value) {
 
-    const [visiblePhotos, setVisiblePhotos] = useState(properties);
+//Home function returns html for Home page 
+export default function Home( { parsedData } ) {
+
+    const [data, setData] = useState(parsedData);
+    const [visiblePhotos, setVisiblePhotos] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
+    const [searchPill, setSearchPill] = useState("")
 
     const router = useRouter();
+
+    useEffect(()=>{
+      setVisiblePhotos(parsedData);
+    },[])
+
 
     // searchItems handles the searchbar by updating visiblePhotos
     const searchItems = (searchValue) => {
       setSearchTerm(searchValue)
-      if (searchTerm !=="") {
-        const filteredData = properties.filter((item) => {
-          console.log(item.tags);
-          return Object.values(item.tags).join("").toLowerCase().includes(searchTerm.toString().toLowerCase())
+      if (searchValue !=="") {
+        const filteredData = data.filter((item) => {
+            console.log(item.tags);
+            return Object.values(item.tags).join("").toLowerCase().includes(searchValue.toLowerCase())
       })
-      setVisiblePhotos(filteredData)
-      }
-    }
+      setVisiblePhotos(filteredData);
+    }}
 
     // handles updating visblePhotos by clicking on a tag
     const searchTag = (tagSearch) => {
-      if (tagSearch !=="") {
-      console.log(tagSearch)
-      const filteredData = properties.filter((item) => {
-        return Object.values(item.tags).join("").toLowerCase().includes(tagSearch.toLowerCase())
+    console.log(tagSearch);
+    // searchItems(tagSearch);
+    // setSearchTerm("");
+    // setSearchPill((searchPill, tagSearch) => ({tagSearch}));
+    // console.log(searchPill)
+    if (tagSearch !=="") {
+      const filteredData = data.filter((item) => {
+        return Object.values(item.tags).join("").toLowerCase().includes(tagSearch.toString().toLowerCase())
       })
-      setVisiblePhotos(filteredData)
+      setVisiblePhotos(filteredData);
+      console.log(filteredData)
     }}
 
     // handles updating via search bar entry
@@ -63,23 +70,22 @@ export default function Home( { properties }, {tagSearch}, value) {
     };
 
     // resets the view and clears search bar
-    const resetSearchBar = () => {
-      setSearchTerm("");
-      console.log("received");
-      setVisiblePhotos(properties);
-    }
+    // const resetSearchBar = () => {
+    //   setSearchTerm((searchTerm)=>(""));
+    //   setVisiblePhotos(data);
+    //   console.log(searchTerm);
+    //   console.log('junkyard')
+    // }
 
-    // shuffles photos
+    // shuffles photos -- currently just a page refresh
     const shufflePhotos = () => {
-      // setSearchTerm("")
-      // router.replace(router.asPath);
       router.reload();
-      // setVisiblePhotos(properties);
     }
 
-    /*this is the body the application with Input that collects searchTerm and a return of Collection
-    with the data variable as an argument. data variable is conditionl upon searchTerm  
-    */
+    const resetTagSearch = () => {
+      setSearchPill("");
+    }
+
     return (
       
         <div className="background">
@@ -92,42 +98,25 @@ export default function Home( { properties }, {tagSearch}, value) {
           <div>
             <h1 className="uppercase">Bob Retuer Photo Archive [Prototype]</h1>
           </div>
-        <div>
-          <div className="flex justify-center items-center">
-            <div className="flex w-fit mt-9 pt-20 pb-5 align-middle justify-center items-center">
-              <SearchBar 
-                searchTerm={searchTerm}
-                setSearchTerm={setSearchTerm}
-                value={searchTerm}
-                setValueFromInput={setValueFromInput}
-              />
-              <ResetSearch 
-                searchTerm={searchTerm} 
-                setSearchTerm={setSearchTerm} 
-                resetSearchBar={resetSearchBar} 
-              />
-              <ShuffleButton 
-                shufflePhotos={shufflePhotos}
-                setVisiblePhotos={setVisiblePhotos}
-                properties={properties}
-              />
-            </div>
-          </div>
-        </div>
-          <div className="columns-2xs gap-4 px-3">
+        
+          
             <div>
-                    <div>
-                      <Collection 
-                      className="overflow-clipped"
-                      searchTag={searchTag}
-                      tagSearch={tagSearch}
-                      properties={visiblePhotos}/>
-                    </div>
+                <div>
+                  <SearchFilter 
+                    className="overflow-clipped"
+                    visiblePhotos = {visiblePhotos}
+                    setVisiblePhotos = {setVisiblePhotos}
+                    shufflePhotos = {shufflePhotos}
+                    searchTag = {searchTag}
+                    resetTagSearch = {resetTagSearch}
+                    parsedData = {parsedData}
+                    // resetSearchBar = {resetSearchBar}
+                    setValueFromInput = {setValueFromInput}
+                    searchTerm = { searchTerm }
+                    setSearchTerm = { setSearchTerm }
+                  />
+                </div> 
             </div>
-          </div>
-            <footer>
-                
-            </footer>
             </main>
         </div>
     )

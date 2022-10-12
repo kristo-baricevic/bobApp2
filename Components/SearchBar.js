@@ -5,6 +5,7 @@ export default function SearchBar ({searchTerm, resetTagSearch, setValueFromInpu
     const handleChange = (value) => {
         resetTagSearch();
         setValueFromInput(value)
+        console.log(value)
     }
 
     return (

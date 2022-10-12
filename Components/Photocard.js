@@ -1,7 +1,7 @@
 import Button from "./Button";
 import Modal from "./Modal";
 
-export default function Photocard ({property, searchTag, tagSearch} ) {
+export default function Photocard ({property, searchTag, tagSearch, resetTagSearch, currentPage} ) {
 
   return ( 
     <>
@@ -17,6 +17,8 @@ export default function Photocard ({property, searchTag, tagSearch} ) {
                       searchTag={searchTag}
                       tagSearch={tagSearch}
                       tag={tag} 
+                      resetTagSearch={resetTagSearch}
+                      currentPage={currentPage}
                     />
                   </div>
                 ))}

@@ -5,7 +5,7 @@ import NavigationBar from "./NavigationBar";
 import Pagination from "./Pagination";
 
 
-export default function SearchFilter ( { parsedData, visiblePhotos, setVisiblePhotos, setValueFromInput, searchTag, tagSearch, resetSearchBar, resetTagSearch, searchTerm, setSearchTerm, shufflePhotos}) {
+export default function SearchFilter ( { parsedData, visiblePhotos, setVisiblePhotos, setValueFromInput, searchTag, tagSearch, resetSearchBar, searchTerm, setSearchTerm, shufflePhotos}) {
     
     const [currentPage, setCurrentPage] = useState(1);
 
@@ -23,6 +23,14 @@ export default function SearchFilter ( { parsedData, visiblePhotos, setVisiblePh
     //declare pageData for Pagination
     const pageData = (visiblePhotos.slice(indexOfFirstRecord, 
         indexOfLastRecord));
+
+    const resetTagSearch = () => {
+    //   setSearchPill("");
+      setCurrentPage(1);
+      console.log(currentPage);
+      console.log(currentPage);
+      }
+        
 
     return (
         <>
@@ -50,6 +58,7 @@ export default function SearchFilter ( { parsedData, visiblePhotos, setVisiblePh
                                         setSearchTerm = {setSearchTerm}
                                         parsedData = {parsedData}
                                         setCurrentPage = {setCurrentPage}
+                                        currentPage={currentPage}
                                     />
                                 </div>
                             </div>
@@ -63,6 +72,8 @@ export default function SearchFilter ( { parsedData, visiblePhotos, setVisiblePh
                             searchTag={ searchTag }
                             tagsearch={ tagSearch }
                             visiblePhotos={ pageData}
+                            resetTagSearch = {resetTagSearch}
+                            currentPage = {currentPage}
                         />    
                     </div>
                 </div>

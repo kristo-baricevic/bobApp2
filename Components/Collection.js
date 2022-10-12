@@ -2,7 +2,7 @@ import Photocard from "./Photocard";
 import React, {useState} from "react";
 
 
-export default function Collection ({visiblePhotos, searchTag, tagSearch} ) {
+export default function Collection ({visiblePhotos, searchTag, tagSearch, resetTagSearch} ) {
 
   return (
     visiblePhotos.map((property) => {
@@ -13,6 +13,7 @@ export default function Collection ({visiblePhotos, searchTag, tagSearch} ) {
             searchTag={searchTag}
             tagSearch={tagSearch}
             property={property}
+            resetTagSearch={resetTagSearch}
           />
         </div>
       </div>

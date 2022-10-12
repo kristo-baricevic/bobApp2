@@ -3,13 +3,14 @@ import SearchBar from "./SearchBar";
 import ResetSearch from "./ResetSearch";
 import ShuffleButton from "./ShuffleButton";
 
-export default function NavigationBar ({ parsedData, setCurrentPage, shufflePhotos, searchTerm, setSearchTerm, setVisiblePhotos, setValueFromInput, resetTagSearch}) {
+export default function NavigationBar ({ parsedData, setCurrentPage, currentPage, shufflePhotos, searchTerm, setSearchTerm, setVisiblePhotos, setValueFromInput, resetTagSearch}) {
 
     const resetSearchBar = () => {
         setSearchTerm((searchTerm)=>(""));
         setVisiblePhotos(parsedData);
         console.log(searchTerm);
         setCurrentPage(1);
+        console.log(currentPage);
         // console.log('junkyard')
       }
 

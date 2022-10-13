@@ -12,7 +12,7 @@ export async function getServerSideProps() {
   const { db } = await connectToDatabase();
 
   //parse data
-  const data = await db.collection("sample_photoApp").aggregate([{$sample: {size: 300 }}]).limit(300);
+  const data = await db.collection("sample_photoApp").aggregate([{$sample: {size: 511 }}]).limit(511);
   const arrayData = await data.toArray();
   const parsedData = JSON.parse(JSON.stringify(arrayData));
   // const dataClone = parsedData;

@@ -45,7 +45,7 @@ export default function Home( { parsedData, setCurrentPage } ) {
       if (searchValue !=="") {
         const filteredData = data.filter((item) => {
             console.log(item.tags);
-            return Object.values(item.tags).join("").toLowerCase().includes(searchValue.toLowerCase())
+            return Object.values(item).join("").toLowerCase().includes(searchValue.toLowerCase())
       })
       setVisiblePhotos(filteredData);
     }}

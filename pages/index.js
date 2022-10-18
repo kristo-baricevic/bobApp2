@@ -15,7 +15,6 @@ export async function getServerSideProps() {
   const data = await db.collection("sample_photoApp").aggregate([{$sample: {size: 511 }}]).limit(511);
   const arrayData = await data.toArray();
   const parsedData = JSON.parse(JSON.stringify(arrayData));
-  // const dataClone = parsedData;
  
   //return object props with parsed pata
   return {
@@ -30,7 +29,6 @@ export default function Home( { parsedData, setCurrentPage } ) {
     const [data, setData] = useState(parsedData);
     const [visiblePhotos, setVisiblePhotos] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
-    const [searchPill, setSearchPill] = useState("")
 
     const router = useRouter();
 
@@ -53,10 +51,6 @@ export default function Home( { parsedData, setCurrentPage } ) {
     // handles updating visblePhotos by clicking on a tag
     const searchTag = (tagSearch) => {
     console.log(tagSearch);
-    // searchItems(tagSearch);
-    // setSearchTerm("");
-    // setSearchPill((searchPill, tagSearch) => ({tagSearch}));
-    // console.log(searchPill)
     if (tagSearch !=="") {
       const filteredData = data.filter((item) => {
         return Object.values(item.tags).join("").toLowerCase().includes(tagSearch.toString().toLowerCase())
@@ -70,20 +64,10 @@ export default function Home( { parsedData, setCurrentPage } ) {
       searchItems(value)
     };
 
-    // resets the view and clears search bar
-    // const resetSearchBar = () => {
-    //   setSearchTerm((searchTerm)=>(""));
-    //   setVisiblePhotos(data);
-    //   console.log(searchTerm);
-    //   console.log('junkyard')
-    // }
-
     // shuffles photos -- currently just a page refresh
     const shufflePhotos = () => {
       router.reload();
     }
-
-    
 
     return (
       
@@ -108,7 +92,6 @@ export default function Home( { parsedData, setCurrentPage } ) {
                     shufflePhotos = {shufflePhotos}
                     searchTag = {searchTag}
                     parsedData = {parsedData}
-                    // resetSearchBar = {resetSearchBar}
                     setValueFromInput = {setValueFromInput}
                     searchTerm = { searchTerm }
                     setSearchTerm = { setSearchTerm }

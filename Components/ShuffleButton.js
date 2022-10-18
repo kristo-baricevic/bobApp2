@@ -6,7 +6,6 @@ export default function ShuffleButton ({ searchTerm, properties, setSearchTerm, 
     
     const handleClick = () => {
         shufflePhotos();
-        // setVisiblePhotos(properties);
         console.log('shuffle');
     }
 

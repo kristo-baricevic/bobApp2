@@ -31,18 +31,6 @@ export default function Pagination ( { nPages, currentPage, setCurrentPage, visi
                         <i class="fa-solid fa-square-caret-left fa-4x"></i>
                     </a>
                 </li>
-                {/* {pageNumbers.map(pgNumber => (
-                    <li key={pgNumber} 
-                        className= {`pagination ${currentPage == pgNumber ? 'active' : ''} `} >
-
-                        <a onClick={() => setCurrentPage(pgNumber)}  
-                            className='pagination' 
-                            href='#'>
-                            
-                            {pgNumber}
-                        </a>
-                    </li>
-                ))} */}
                 <li className="pagination">
                     <a className="pagination" 
                         onClick={nextPage}

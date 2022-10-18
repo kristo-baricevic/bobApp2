@@ -11,8 +11,6 @@ export default function Button ({tag, searchTag, currentPage, resetTagSearch}) {
             resetTagSearch();
             searchTag(tag)
             console.log(tag)
-            
-            // toggleClassCheck
         }
     
         return (

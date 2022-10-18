@@ -1,13 +1,8 @@
 import React, { useState } from "react";
-import { saveAs } from 'file-saver';
-
 
 
 export default function Modal ({property} ) {
     const [modal, setModal] = useState(false)
-    const downloadImage = () => {
-      saveAs(property.url, 'image.jpg')
-    }
 
     const toggleModal = () => {
         setModal(modal => !modal);

@@ -28,7 +28,7 @@ export default function Pagination ( { nPages, currentPage, setCurrentPage, visi
                     <a className="pagination" 
                         onClick={prevPage} 
                         href='#'>
-                        <i class="fa-solid fa-square-caret-left fa-4x"></i>
+                        <i className="fa-solid fa-square-caret-left fa-4x"></i>
                     </a>
                 </li>
                 <li className="pagination">

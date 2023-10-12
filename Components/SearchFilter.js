@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from "react";
+import React, {useState } from "react";
 import Collection from "./Collection";
-import { useRouter } from 'next/router';
 import NavigationBar from "./NavigationBar";
 import Pagination from "./Pagination";
 
@@ -31,7 +30,6 @@ export default function SearchFilter ( { parsedData, visiblePhotos, setVisiblePh
       console.log(currentPage);
       }
         
-
     return (
         <>
             <div className="w-full">    

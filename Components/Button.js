@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 
-export default function Button ({tag, searchTag, currentPage, resetTagSearch, toggleClassCheck}) {
+export default function Button ({tag, searchTag, currentPage, resetTagSearch}) {
         const [btnState, setBtnState] = useState(false);
         const [tagSearch, setTagSearch] = useState("");
 
@@ -13,10 +13,12 @@ export default function Button ({tag, searchTag, currentPage, resetTagSearch, to
     
         return (
             <button
-            tagsearch={tagSearch}
-            searchTag={searchTag}
-            className={`pill btn${toggleClassCheck}`}
-            onClick={(tag)=>handleClick(tag.target.firstChild.data)}
-            >{tag}</button>
+                tagsearch={tagSearch}
+                searchTag={searchTag}
+                className="pill"
+                onClick={(tag)=>handleClick(tag.target.firstChild.data)}
+            >
+                {tag}
+            </button>
         )
     }

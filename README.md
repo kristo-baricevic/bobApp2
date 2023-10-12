@@ -1,34 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# The Bob Reuter Photography Archive
 
-First, run the development server:
+## Background
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+I ran a record label when I was growing up and one of my musicians, Bob Reuter (1951-2013), was an accomplished photographer. When Bob passed away, he left all of his work in my care. He had over 500 large and small prints that he created in his own darkroom. Almost all of his negatives had been destroyed, so these photographs were all that existed of Bob's fine-art career. I had been moving these photographs from apartment to apartment, building to building, unsure of how I would find a safe place for them to live. Once I started to learn software development I saw an opportunity to present the work as an online archive to aid in my search. A local history museum aided in scanning the photos and then I was off to the races!
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+(Spoiler alert: thanks to this website - and a little bit of serendipity - these photographs now live in the historical archives at the University of Missouri in St. Louis)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Goal
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+I wanted a simple way to present the photos to the user. The photos speak for themselves and I wanted a minimalistic site that mirrored the style of photography. But I also wanted it to be fast and easy to use. When Bob was alive, he would place a box of new photos in front of you and tell you to look through them. I wanted to simulate that feel of flipping through the photos, but I also wanted to create an organic experience for the user to explore the photos based on what they were drawn to.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Tech Stack
 
-## Learn More
+MongoDb, Express.js, React, Node.js (MERN)
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This site was deployed on Vercel with image hosting on bunny.net
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Use 
 
-## Deploy on Vercel
+- On app mount, the user is shown a randomized set of 20 photos from the database. The user can scroll drown the page to look at the photos and use the pagination feature to see the next 20. Or the user can utilize the serach and keyword buttons to guide their experience.
+- If the user utilizes the search bar they can search for words that will appear in the title of the photographs, as well as the keywords that appear below them. The app has dynamic search results that update quickly with each character, pulling from the entire catalog of photos.
+- Clicking the keywords is a fun way to look at the photos. The keywords are based on topics, or subjects in the photograph, and clicking on them will show you the other photos that share that keyword. So if you are liking a photograph that shows rock and roll, the rest are just a click away!
+- The shuffle button is another fun feature. Clicking shuffle will resort all 500 photographs and show you the first 20 of the new arrangement, so it randomizes what you are looking at.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

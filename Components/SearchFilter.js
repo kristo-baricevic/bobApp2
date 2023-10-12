@@ -35,37 +35,24 @@ export default function SearchFilter ( { parsedData, visiblePhotos, setVisiblePh
     return (
         <>
             <div className="w-full">    
-                <div className="">
-                    <div className="">
-                        <div>
-                            <div className="">
-                                <Pagination
-                                    nPages = { nPages }
-                                    currentPage = { currentPage } 
-                                    setCurrentPage = { setCurrentPage }
-                                    visiblePhotos = { pageData }
-                                />
-                            </div>
-                            <div className="">
-                                <div className="">
-                                    < NavigationBar 
-                                        setVisiblePhotos={setVisiblePhotos}
-                                        resetTagSearch = {resetTagSearch}
-                                        resetSearchBar = {resetSearchBar}
-                                        shufflePhotos = {shufflePhotos}
-                                        setValueFromInput = {setValueFromInput}
-                                        searchTerm = {searchTerm}
-                                        setSearchTerm = {setSearchTerm}
-                                        parsedData = {parsedData}
-                                        setCurrentPage = {setCurrentPage}
-                                        currentPage={currentPage}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <Pagination
+                    nPages = { nPages }
+                    currentPage = { currentPage } 
+                    setCurrentPage = { setCurrentPage }
+                    visiblePhotos = { pageData }
+                />
+                < NavigationBar 
+                    setVisiblePhotos={setVisiblePhotos}
+                    resetTagSearch = {resetTagSearch}
+                    resetSearchBar = {resetSearchBar}
+                    shufflePhotos = {shufflePhotos}
+                    setValueFromInput = {setValueFromInput}
+                    searchTerm = {searchTerm}
+                    setSearchTerm = {setSearchTerm}
+                    parsedData = {parsedData}
+                    setCurrentPage = {setCurrentPage}
+                    currentPage={currentPage}
+                />
                 <div className="grid grid-cols-1 gap-4">
                     <Collection
                         searchTag={searchTag}
@@ -83,6 +70,7 @@ export default function SearchFilter ( { parsedData, visiblePhotos, setVisiblePh
                         visiblePhotos = { pageData }
                     />
                 </div>
+            </div>
         </>
     )
 }

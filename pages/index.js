@@ -48,7 +48,7 @@ export default function Home( { parsedData, setCurrentPage } ) {
       setVisiblePhotos(filteredData);
     }}
 
-    // handles updating visblePhotos by clicking on a tag
+    // handles updating visiblePhotos by clicking on a tag
     const searchTag = (tagSearch) => {
     console.log(tagSearch);
     if (tagSearch !=="") {
@@ -79,10 +79,8 @@ export default function Home( { parsedData, setCurrentPage } ) {
           </Head>
           <Script src="https://kit.fontawesome.com/2fda98f1da.js" crossOrigin="anonymous" async></Script>
           <div>
-            <h1 className="uppercase">Bob Retuer Photo Archive [Prototype]</h1>
+            <h1 className="uppercase">Bob Retuer Photo Archive</h1>
           </div>
-        
-          
             <div>
                 <div>
                   <SearchFilter 

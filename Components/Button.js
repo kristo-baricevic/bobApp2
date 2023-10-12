@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 
 
-export default function Button ({tag, searchTag, currentPage, resetTagSearch}) {
+export default function Button ({tag, searchTag, currentPage, resetTagSearch, toggleClassCheck}) {
         const [btnState, setBtnState] = useState(false);
         const [tagSearch, setTagSearch] = useState("");
-
-        let toggleClassCheck = btnState ? ' active': null;
 
         const handleClick = (tag) => {
             resetTagSearch();

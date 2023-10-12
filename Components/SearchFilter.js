@@ -66,7 +66,6 @@ export default function SearchFilter ( { parsedData, visiblePhotos, setVisiblePh
                     </div>
                 </div>
             </div>
-            <div className="mx-auto max-w-screen-xl flex items-center">
                 <div className="grid grid-cols-1 gap-4">
                     <Collection
                         searchTag={searchTag}
@@ -76,7 +75,6 @@ export default function SearchFilter ( { parsedData, visiblePhotos, setVisiblePh
                         currentPage={currentPage}
                     />
                 </div>
-            </div>
                 <div>  
                     <Pagination
                         nPages = { nPages }

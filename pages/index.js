@@ -82,19 +82,17 @@ export default function Home( { parsedData, setCurrentPage } ) {
             <h1 className="uppercase">Bob Retuer Photo Archive</h1>
           </div>
             <div>
-                <div>
-                  <SearchFilter 
-                    className="overflow-clipped"
-                    visiblePhotos = {visiblePhotos}
-                    setVisiblePhotos = {setVisiblePhotos}
-                    shufflePhotos = {shufflePhotos}
-                    searchTag = {searchTag}
-                    parsedData = {parsedData}
-                    setValueFromInput = {setValueFromInput}
-                    searchTerm = { searchTerm }
-                    setSearchTerm = { setSearchTerm }
-                  />
-                </div> 
+              <SearchFilter 
+                className="overflow-clipped flex flex-col justify-center justify-items-center items-center"
+                visiblePhotos = {visiblePhotos}
+                setVisiblePhotos = {setVisiblePhotos}
+                shufflePhotos = {shufflePhotos}
+                searchTag = {searchTag}
+                parsedData = {parsedData}
+                setValueFromInput = {setValueFromInput}
+                searchTerm = { searchTerm }
+                setSearchTerm = { setSearchTerm }
+              />
             </div>
             </main>
         </div>

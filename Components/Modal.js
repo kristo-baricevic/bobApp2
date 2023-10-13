@@ -10,7 +10,7 @@ export default function Modal ({property} ) {
     
   return ( 
         <>
-          <div>
+          <div className="cursor-pointer">
           <img src={property.url} onClick={toggleModal} alt="image modal"/>
           {modal && (
             <div className="modal">

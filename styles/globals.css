@@ -49,36 +49,28 @@ h1 {
   font-size: 24px;
   padding-top: 15px;
   padding-bottom: 15px;
-  /* position:fixed; */
   width: 100%;
 }
 
 .pill {
   font-size: 12px;
-  border-radius: 1em;
+  border-radius: 2em;
   margin-left: 6px;
+  padding: 10px 20px;
   border: none;
   outline: none;
   background: #bbbbbb;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .pill:hover {
   background: #cccccc;
-}
-
-.pill:focus {
-  background: rgb(98, 98, 98);
-  color: white;
-}
-
-.pill:not(.pill--selected):hover {
-  background: #cccccc;
   cursor: pointer;
-
 }
 
-.pill--selected {
-  background: teal;
+.pill:active {
+  background-color: black;
+  color: white;
 }
 
 .download {
@@ -106,21 +98,4 @@ h1 {
   padding: 8px 16px;
   text-decoration: none;
 }
-/* 
-.tryAgain {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background-color: thistle;
-  padding-top: 100px;
-  padding-bottom: 40px;
-}
-
-.andAgain {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
 

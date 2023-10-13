@@ -504,6 +504,15 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.col-span-1 {
+  grid-column: span 1 / span 1;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -524,12 +533,16 @@ video {
   display: block;
 }
 
-.inline {
-  display: inline;
-}
-
 .flex {
   display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .w-full {
@@ -541,13 +554,24 @@ video {
   width: fit-content;
 }
 
+.max-w-screen-xl {
+  max-width: 1280px;
+}
+
 .max-w-sm {
   max-width: 24rem;
 }
 
-.columns-2xs {
-  -moz-columns: 18rem;
-       columns: 18rem;
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
 }
 
 .items-center {
@@ -556,6 +580,10 @@ video {
 
 .justify-center {
   justify-content: center;
+}
+
+.justify-items-center {
+  justify-items: center;
 }
 
 .gap-4 {
@@ -592,15 +620,6 @@ video {
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-}
-
-.p-6 {
-  padding: 1.5rem;
-}
-
-.px-3 {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
 }
 
 .px-6 {
@@ -708,36 +727,28 @@ h1 {
   font-size: 24px;
   padding-top: 15px;
   padding-bottom: 15px;
-  /* position:fixed; */
   width: 100%;
 }
 
 .pill {
   font-size: 12px;
-  padding: 0.5em 1em;
-  margin: .25 em;
-  border-radius: 1em;
+  border-radius: 2em;
+  margin-left: 6px;
+  padding: 10px 20px;
   border: none;
   outline: none;
   background: #bbbbbb;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .pill:hover {
   background: #cccccc;
-}
-
-.pill:focus {
-  background: rgb(98, 98, 98);
-  color: white;
-}
-
-.pill:not(.pill--selected):hover {
-  background: #cccccc;
   cursor: pointer;
 }
 
-.pill--selected {
-  background: teal;
+.pill:active {
+  background-color: black;
+  color: white;
 }
 
 .download {
@@ -766,22 +777,4 @@ h1 {
   padding: 8px 16px;
   text-decoration: none;
 }
-
-/* 
-.tryAgain {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background-color: thistle;
-  padding-top: 100px;
-  padding-bottom: 40px;
-}
-
-.andAgain {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
 

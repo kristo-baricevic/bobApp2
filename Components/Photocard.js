@@ -4,13 +4,13 @@ import Modal from "./Modal";
 export default function Photocard({ property, searchTag, tagSearch, resetTagSearch, currentPage }) {
   return (
     <div className="pb-3">
-      <div className="max-w-sm rounded bg-slate-100 overflow-hidden shadow-lg mx-auto"> 
+      <div className="flex flex-col max-w-sm rounded bg-slate-100 shadow-lg mx-auto"> 
         <Modal property={property} />
-        <div className="px-6 py-4 items-center justify-center h-full">
-          <div className="text-center text-white bg-black text-xl mb-2">
+        <div className="px-6 py-4 flex flex-col items-center justify-center h-full">
+          <div className="text-center px-20 text-white bg-black text-xl rounded mb-2">
             {property.name}
           </div>
-          <div className="flex flex-row justify-center justify-items-center items-center">
+          <div className="flex flex-wrap justify-center justify-items-center items-center">
             {property.tags.map((tag, index) => (
                 <Button
                   key={index}

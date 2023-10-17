@@ -100,3 +100,12 @@ h1 {
   text-decoration: none;
 }
 
+.close-button {
+  position: absolute;
+  top: 10px;
+  width: auto;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}

@@ -11,7 +11,6 @@ export default function NavigationBar ({ parsedData, setCurrentPage, currentPage
         console.log(searchTerm);
         setCurrentPage(1);
         console.log(currentPage);
-        // console.log('junkyard')
       }
 
     return (

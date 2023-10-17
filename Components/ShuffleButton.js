@@ -13,7 +13,7 @@ export default function ShuffleButton ({ searchTerm, properties, setSearchTerm, 
         <>
         <button 
             value={searchTerm}
-            className="border-2 ml-1 rounded border-black px-1"
+            className="border-2 px-4 py-2 ml-1 rounded-full border-black bg-white"
             onClick={handleClick}
             setvisiblephotos={setVisiblePhotos}
             > Shuffle

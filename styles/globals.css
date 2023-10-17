@@ -42,7 +42,7 @@ body.active-modal {
   overflow-y: hidden;
 }
 
-h1 {
+/* h1 {
   background-color: black;
   color: white;
   text-align: center;
@@ -50,6 +50,49 @@ h1 {
   padding-top: 15px;
   padding-bottom: 15px;
   width: 100%;
+} */
+
+.navbar {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.navbar h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+/* Mobile menu styles */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  background-color: gray;
+  padding: 10px;
+  text-align: right;
+}
+
+.mobile-menu a {
+  color: white;
+  text-decoration: none;
+  margin: 5px 0;
+}
+
+/* Show the mobile menu when a specific class is applied */
+.mobile-menu.show {
+  display: flex;
 }
 
 .pill {
@@ -108,4 +151,11 @@ h1 {
   border: none;
   cursor: pointer;
   outline: none;
+}
+
+/* Show mobile menu for screens with a max-width of 600px */
+@media (max-width: 600px) {
+  .mobile-menu.show {
+    display: flex;
+  }
 }

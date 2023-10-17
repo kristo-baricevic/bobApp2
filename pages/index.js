@@ -3,8 +3,9 @@ import { connectToDatabase } from "../util/mongodb";
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
-
 import SearchFilter from '../Components/SearchFilter';
+import Link from 'next/link';
+import Navbar from '../Components/Navbar';
 
 export async function getServerSideProps() {
 
@@ -79,7 +80,7 @@ export default function Home( { parsedData, setCurrentPage } ) {
             </Head>
             <Script src="https://kit.fontawesome.com/2fda98f1da.js" crossOrigin="anonymous" async></Script>
             <div>
-              <h1 className="uppercase">Bob Retuer Photo Archive</h1>
+              <Navbar />
             </div>
             <div>
               <SearchFilter 

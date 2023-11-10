@@ -153,6 +153,44 @@ body.active-modal {
   outline: none;
 }
 
+/* ABOUT PAGE */
+.about-body {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(235, 235, 235);
+  height: 100vh;
+}
+
+.about-photo-container {
+  display: flex;
+  display: wrap;
+  justify-content: center;
+  height: auto;
+  padding: 8px;
+}
+ 
+.about-photo {
+  display: flex;
+  max-width: 300px;
+  margin-left: 8px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+
+.about-bio-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.about-bio-paragraph {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  background-color: #cccccc;
+}
+
 /* Show mobile menu for screens with a max-width of 600px */
 @media (max-width: 600px) {
   .mobile-menu.show {

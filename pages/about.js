@@ -45,7 +45,7 @@ export default function Home() {
                     <img className="about-photo" src="https://bobreuterphotoarchive-vercel.b-cdn.net/Reuter_0273.jpg" />
                 </div>
                 <div className="about-bio-container">
-                    <p className="about-bio-paragraph">“We are part of an ancient tradition, resurrected every other generation, older than dirt and they can’t wipe us out. We’re like weeds or the roaches. Just by being who we are, we’ll warp the levers of their machines, from the inside out.” – Bob Reuter
+                    <p className="about-bio-paragraph">
 
 Bob Reuter’s musical career spanned decades – he began playing in the garage rock era of the 60s and with the Cough Medicine Company layed teen clubs, frat parties, and dance halls.
 
@@ -60,6 +60,9 @@ By 2011, Bob Reuter’s Alley Ghost, as the band had become commonly known, rele
 Over the years as personnel changes ensued, the band continued moving in an electric rock direction. In 2013, Bob Reuter’s Alley Ghost released what would be their final single with Reuter- “Dana Dew” b/w “She Brought Me to the Wire.”
 
 On August 3, 2013, Bob Reuter died in a tragic accident. Though he left this world too soon, Bob left behind a body of work that spans a lifetime – poetry, literature, photographs, and of course 100’s of songs in the care of Big Muddy Records.</p>
+                </div>
+                <div className="cowboy-angel-container">
+                    <img className="cowboy-angel-logo" src="https://scontent-lga3-1.xx.fbcdn.net/v/t39.30808-6/326758178_1324464031733215_4399907929588342486_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_ohc=C34k0w5nWiAAX9r-ahT&_nc_ht=scontent-lga3-1.xx&oh=00_AfAgr7TcQRPMh3jnMr1FUYa7_6-wOHu5zEgFba0KOWHL-A&oe=65546C3A" />
                 </div>
             </div>
           </main>

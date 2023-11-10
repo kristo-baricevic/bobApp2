@@ -157,13 +157,13 @@ body.active-modal {
 .about-body {
   display: flex;
   flex-direction: column;
-  background-color: rgb(235, 235, 235);
-  height: 100vh;
+  background: -webkit-linear-gradient(top, white, gray);
+  height: 100%;
 }
 
 .about-photo-container {
   display: flex;
-  display: wrap;
+  flex-wrap: wrap;
   justify-content: center;
   height: auto;
   padding: 8px;
@@ -173,6 +173,7 @@ body.active-modal {
   display: flex;
   max-width: 300px;
   margin-left: 8px;
+  margin-top: 8px;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background-color: white;
@@ -188,7 +189,25 @@ body.active-modal {
   padding: 20px;
   display: flex;
   justify-content: center;
-  background-color: #cccccc;
+  background-color: #e3e3e3;
+  border-style: solid;
+  border-width: 2px;
+  border-color:black;
+  border-radius: 16px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+.cowboy-angel-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.cowboy-angel-logo {
+  height: 60px;
+  width: auto;
+  border-radius: 60px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Show mobile menu for screens with a max-width of 600px */

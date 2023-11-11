@@ -58,7 +58,23 @@ body.active-modal {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px 10px;
+}
+
+.navbar-border {
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+  width: 100%;
+  border-color: white;
+  border-style: solid;
+  border-width: 2px;
   padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.navbar-title-container {
+  cursor: pointer;
 }
 
 .navbar h1 {
@@ -70,6 +86,11 @@ body.active-modal {
   color: white;
   text-decoration: none;
   margin-left: 20px;
+}
+
+.hamburger {
+  position: absolute;
+  right: 20px;
 }
 
 /* Mobile menu styles */
@@ -204,10 +225,15 @@ body.active-modal {
 }
 
 .cowboy-angel-logo {
-  height: 60px;
+  cursor: pointer;
+  height: 80px;
   width: auto;
   border-radius: 60px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+.cowboy-angel-logo:hover {
+  opacity: 50%;
 }
 
 /* Show mobile menu for screens with a max-width of 600px */

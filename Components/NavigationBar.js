@@ -17,7 +17,7 @@ export default function NavigationBar ({ parsedData, setCurrentPage, currentPage
         <>
         <div className="w-full">
           <div className="flex justify-center items-center">
-            <div className="flex w-fit mt-2 pt-1 pb-9 align-middle justify-center items-center">
+            <div className="flex flex-wrap px-6 mt-2 pt-1 pb-9 align-middle justify-center items-center">
             
             <SearchBar 
                 searchTerm={searchTerm}

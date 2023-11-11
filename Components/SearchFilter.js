@@ -32,42 +32,40 @@ export default function SearchFilter ( { parsedData, visiblePhotos, setVisiblePh
         
     return (
         <>
-            <div className="w-full">    
+            <Pagination
+                nPages = { nPages }
+                currentPage = { currentPage } 
+                setCurrentPage = { setCurrentPage }
+                visiblePhotos = { pageData }
+            />
+            < NavigationBar 
+                setVisiblePhotos={setVisiblePhotos}
+                resetTagSearch = {resetTagSearch}
+                resetSearchBar = {resetSearchBar}
+                shufflePhotos = {shufflePhotos}
+                setValueFromInput = {setValueFromInput}
+                searchTerm = {searchTerm}
+                setSearchTerm = {setSearchTerm}
+                parsedData = {parsedData}
+                setCurrentPage = {setCurrentPage}
+                currentPage={currentPage}
+            />
+            <div className="search-filter-collection-container">
+                <Collection
+                    searchTag={searchTag}
+                    tagsearch={tagSearch}
+                    visiblePhotos={pageData}
+                    resetTagSearch={resetTagSearch}
+                    currentPage={currentPage}
+                />
+            </div>
+            <div>  
                 <Pagination
                     nPages = { nPages }
                     currentPage = { currentPage } 
                     setCurrentPage = { setCurrentPage }
                     visiblePhotos = { pageData }
                 />
-                < NavigationBar 
-                    setVisiblePhotos={setVisiblePhotos}
-                    resetTagSearch = {resetTagSearch}
-                    resetSearchBar = {resetSearchBar}
-                    shufflePhotos = {shufflePhotos}
-                    setValueFromInput = {setValueFromInput}
-                    searchTerm = {searchTerm}
-                    setSearchTerm = {setSearchTerm}
-                    parsedData = {parsedData}
-                    setCurrentPage = {setCurrentPage}
-                    currentPage={currentPage}
-                />
-                <div className="grid grid-cols-1 gap-4">
-                    <Collection
-                        searchTag={searchTag}
-                        tagsearch={tagSearch}
-                        visiblePhotos={pageData}
-                        resetTagSearch={resetTagSearch}
-                        currentPage={currentPage}
-                    />
-                </div>
-                <div>  
-                    <Pagination
-                        nPages = { nPages }
-                        currentPage = { currentPage } 
-                        setCurrentPage = { setCurrentPage }
-                        visiblePhotos = { pageData }
-                    />
-                </div>
             </div>
         </>
     )

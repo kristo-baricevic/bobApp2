@@ -72,7 +72,6 @@ export default function Home( { parsedData, setCurrentPage } ) {
     return (
       
         <div className="background">
-          <main>
             <Head>
               <title>Bob Reuter Photography Archive</title>
                 <meta name="description" content="Bob Reuter Digital Archive" />
@@ -81,9 +80,9 @@ export default function Home( { parsedData, setCurrentPage } ) {
             <div>
               <Navbar />
             </div>
-            <div>
+            <main>
+            <div className="photo-collection-external-container">
               <SearchFilter 
-                className="overflow-clipped flex flex-col justify-center justify-items-center items-center"
                 visiblePhotos = {visiblePhotos}
                 setVisiblePhotos = {setVisiblePhotos}
                 shufflePhotos = {shufflePhotos}

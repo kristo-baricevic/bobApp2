@@ -5,11 +5,12 @@
 @tailwind utilities;
 
 main {
-  background-color: #cccccc
+  background-color: #cccccc;
+  padding: 8px;
 }
 
 .background {
-  background-color: #cccccc
+  background-color: #cccccc;
 }
 .modal, .overlay {
   width: 100vw;
@@ -164,6 +165,13 @@ body.active-modal {
   text-decoration: none;
 }
 
+.pagination a:hover {
+  color: white;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
 .close-button {
   position: absolute;
   top: 10px;
@@ -173,6 +181,20 @@ body.active-modal {
   cursor: pointer;
   outline: none;
 }
+
+/* Index etc */
+
+.photo-collection-external-container {
+  padding: 2px;
+}
+
+.search-filter-collection-container {
+  padding: 2px;
+}
+
+.collection-container {
+  padding: 2px;
+ }
 
 /* ABOUT PAGE */
 .about-body {

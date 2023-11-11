@@ -27,16 +27,18 @@ export default function NavigationBar ({ parsedData, setCurrentPage, currentPage
                 setValueFromInput={setValueFromInput}
                 resetTagSearch = {resetTagSearch}
               />
-            <ResetSearch 
-                searchTerm={searchTerm} 
-                setSearchTerm={setSearchTerm} 
-                resetSearchBar={resetSearchBar} 
+            <div className="flex flex-row py-4">
+              <ResetSearch 
+                  searchTerm={searchTerm} 
+                  setSearchTerm={setSearchTerm} 
+                  resetSearchBar={resetSearchBar} 
+                />
+              <ShuffleButton 
+                  shufflePhotos={shufflePhotos}
+                  setVisiblePhotos={setVisiblePhotos}
               />
-            <ShuffleButton 
-                shufflePhotos={shufflePhotos}
-                setVisiblePhotos={setVisiblePhotos}
-            />
-            
+            </div>
+
             </div>
           </div>
         </div>

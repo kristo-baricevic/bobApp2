@@ -3,18 +3,15 @@ import React from "react";
 
 export default function Collection({ visiblePhotos, searchTag, tagSearch, resetTagSearch }) {
   return (
-    <div className="grid grid-cols-1 gap-4">
+    <div className="collection-container">
       {visiblePhotos.map((property, index) => (
-        <div key={index} className="col-span-1">
-          <div className="flex flex-col justify-center items-center ">
+        <div key={index} className="py-4">
             <Photocard
               searchTag={searchTag}
               tagSearch={tagSearch}
               property={property}
               resetTagSearch={resetTagSearch}
-              className="flex flex-col mx-auto max-w-screen-xl"
             />
-          </div>
         </div>
       ))}
     </div>

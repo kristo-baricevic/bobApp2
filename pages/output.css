@@ -686,12 +686,11 @@ video {
 }
 
 main {
-  background-color: #cccccc;
+  background-color: #e8e8e8;
   padding: 8px;
 }
 
 .background {
-  background-color: #cccccc;
 }
 
 .modal, .overlay {
@@ -845,6 +844,13 @@ body.active-modal {
 
 .pagination a {
   color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a:hover {
+  color: rgb(124, 124, 124);
   float: left;
   padding: 8px 16px;
   text-decoration: none;

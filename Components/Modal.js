@@ -10,8 +10,8 @@ export default function Modal ({property} ) {
     
   return ( 
         <>
-          <div className="flex justify-center cursor-pointer ">
-            <img className="flex justify-center shadow-lg" src={property.url} onClick={toggleModal} alt="image modal"/>
+          <div className="flex cursor-pointer justify-center">
+            <img className="cursor-pointer flex justify-center shadow-lg" src={property.url} onClick={toggleModal} alt="image modal"/>
             {modal && (
               <div className="modal">
                   <div className="overlay">

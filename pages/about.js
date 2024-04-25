@@ -42,7 +42,6 @@ export default function Home() {
             <div className="about-body">
                 <div className="about-photo-container">
                     <img className="about-photo" src="https://bobreuterphotoarchive-vercel.b-cdn.net/Reuter_0456%20Bob%20Reuter_0.jpg" />
-                    <img className="about-photo" src="https://bobreuterphotoarchive-vercel.b-cdn.net/Reuter_0273.jpg" />
                 </div>
                 <div className="about-bio-container">
                     <p className="about-bio-paragraph">
@@ -63,7 +62,7 @@ export default function Home() {
                 </div>
                 <div className="cowboy-angel-container">
                     <Link href="/">
-                        <img className="cowboy-angel-logo" src="https://scontent-lga3-1.xx.fbcdn.net/v/t39.30808-6/326758178_1324464031733215_4399907929588342486_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_ohc=C34k0w5nWiAAX9r-ahT&_nc_ht=scontent-lga3-1.xx&oh=00_AfAgr7TcQRPMh3jnMr1FUYa7_6-wOHu5zEgFba0KOWHL-A&oe=65546C3A" />
+                      <img className="about-photo" src="https://bobreuterphotoarchive-vercel.b-cdn.net/Reuter_0273.jpg" />
                     </Link>
                 </div>
             </div>

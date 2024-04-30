@@ -75,6 +75,7 @@ export default function Home( { parsedData, setCurrentPage } ) {
             <Head>
               <title>Bob Reuter Photography Archive</title>
                 <meta name="description" content="Bob Reuter Digital Archive" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
             </Head>
             <Script src="https://kit.fontawesome.com/2fda98f1da.js" crossOrigin="anonymous" async></Script>
             <div>

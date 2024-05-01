@@ -39,7 +39,7 @@ export default function Home() {
             <Navbar />
           </div>
           <div className="about-body">
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <div className="about-photo-container">
               <Image 
                 className="about-photo" 
                 src="https://bobreuterphotoarchive-vercel.b-cdn.net/Reuter_0456%20Bob%20Reuter_0.jpg" 
@@ -49,21 +49,56 @@ export default function Home() {
                 height={500} 
               />
             </div>
+            <div className="flex align-middle justify-center">
+              <h1 className="text-4xl">Biography</h1>
+            </div>
             <div className="about-bio-container">
               <p className="about-bio-paragraph">
-                Bob Reuter’s musical career spanned decades – he began playing in the garage rock era of the 60s and with the Cough Medicine Company layed teen clubs, frat parties, and dance halls.
-
-                In the 1970’s, Bob’s band The Dinosaurs became widely regarded as one of St. Louis’s first Punk bands, and released their seven inch 45 single “Rock and Roll Moron” b/w “It Might Be Rose”. In the 1980s, his Syracuse, NY band Serious Journalism cranked out loud, fast, hard and aggressive melodic rock, and Bob released a 45 single under his own name. Bob later gravitated to roots-rock and helped build the alt-country movement of the 90s with his band Kamikaze Cowboy.
-
-                Cut to 2009, Bob in a hospital bed, his cracked chest just wired shut, blood pumping into one arm, and morphine into the other. He meets two visitors, two young men who had just founded St. Louis’s Big Muddy Records. “We’d like cut a record with you,” they said. “Could you empty my pee bottle?” Bob asked. Well, they did and Bob Reuter’s Bob Reuter’s Alley Ghost was born.
-
-                The band was as talented a group of young rockers as the city of St. Louis could supply, culled from the ranks of other Big Muddy Records bands. They recorded in Bob’s apartment’s kitchen. That recording and a Big Muddy Release of ultra lo-fi lost Dinosaurs tapes began garnering Bob renewed attention among the late teen and early 20’s demographic of the St. Louis’ south side.
-
-                By 2011, Bob Reuter’s Alley Ghost, as the band had become commonly known, released the album “Born There,” and adopted a sweat-drenched proto-punk sound. In support of the album, the band began touring through the Midwest and South in an effort to introduce themselves to the rest of the United States.
-
-                Over the years as personnel changes ensued, the band continued moving in an electric rock direction. In 2013, Bob Reuter’s Alley Ghost released what would be their final single with Reuter- “Dana Dew” b/w “She Brought Me to the Wire.”
-
-                On August 3, 2013, Bob Reuter died in a tragic accident. Though he left this world too soon, Bob left behind a body of work that spans a lifetime – poetry, literature, photographs, and of course 100’s of songs in the care of Big Muddy Records.
+                Bob Reuter was a cherished figure in the St. Louis, Missouri music and arts scene, widely 
+                recognized for his raw, heartfelt music and captivating storytelling. Born and raised in 
+                St. Louis, he spent decades contributing to the city&#39;s cultural fabric as a musician, radio 
+                show host, and photographer. Reuter was known for his gritty, soulful rock and roll style, 
+                often drawing comparisons to artists like Bob Dylan and Tom Waits for his poignant lyrics 
+                and distinctive voice.
+                <br />
+                <br />
+                Throughout his career, Reuter played in several influential bands, including The Dinosaurs, 
+                Kamikaze Cowboy, and later, Alley Ghost, which brought him renewed attention in the local 
+                music scene and beyond. His work extended beyond music; he was also a passionate photographer, 
+                capturing stark, emotional black and white images that reflected the raw edges of urban life.
+                <br />
+                <br />
+                Bob Reuter&#39;s striking black and white photography captured the essence of the city&#39;s 
+                gritty and raw urban landscape. His photographic work, much like his music, was deeply 
+                personal and imbued with emotion, showcasing his keen eye for the beauty and despair 
+                found in everyday scenes.
+                <br />
+                <br />
+                Reuter&#39;s photography often focused on the overlooked or forgotten aspects of urban life, 
+                from desolate alleyways and decaying buildings to the vibrant, often challenging lives of 
+                the people who inhabited these spaces. His images were characterized by a rough, unpolished 
+                aesthetic that highlighted the imperfections and realities of his subjects, lending a visceral 
+                quality to his work that was both haunting and compelling.
+                <br />
+                <br />
+                His approach to photography was intuitive and spontaneous, preferring to shoot with old film 
+                cameras that added a layer of unpredictability and charm to his images. This choice of equipment 
+                complemented his artistic vision, emphasizing the raw and unfiltered view of the world that he 
+                sought to convey.
+                <br />
+                <br />
+                Bob Reuter&#39;s photographs were not just visual records but narrative pieces that told stories 
+                of resilience, hardship, and the human condition. His work has been exhibited in various galleries 
+                and venues around St. Louis, leaving a lasting impression on both the art community and those who 
+                had the chance to view his compelling portrayals of city life.
+                <br />
+                <br />
+                Reuter also had a radio show, &#34;Bob&#39;s Scratchy Records&#34; which became a local favorite on
+                KDHX, where he shared obscure, old vinyl tracks, further solidifying his role as a cultural 
+                curator. His contributions to St. Louis&#39;s arts and music scene left a lasting legacy, 
+                celebrated for his authenticity and unwavering commitment to his craft. Bob Reuter&#39;s 
+                life and work remain a testament to the spirit of St. Louis&#39;s underground arts scene.
+            
               </p>
             </div>
             <div className="cowboy-angel-container">

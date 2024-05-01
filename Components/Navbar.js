@@ -11,14 +11,14 @@ export default function Navbar() {
   return (
     <div className="navbar">
       <div className="navbar-border">
-        <Link href="/">
+        <Link href="/" legacyBehavior passHref>
           <div className="navbar-title-container">
-            <h1>Bob Retuer Photo Archive</h1>
+            <h1>Bob Reuter Photo Archive</h1>
           </div>
         </Link>
         <div>
           <div className={`mobile-menu ${showMobileMenu ? "show" : ""}`}>
-            <Link href="/about">
+            <Link href="/about" legacyBehavior passHref>
               <a>About</a>
             </Link>
             <a href="https://collections.shsmo.org/manuscripts/saint-louis/s0368">

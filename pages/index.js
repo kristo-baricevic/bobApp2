@@ -34,8 +34,7 @@ export default function Home( { parsedData, setCurrentPage } ) {
 
     useEffect(()=>{
       setVisiblePhotos(parsedData);
-    },[])
-
+    },[parsedData])
 
     // searchItems handles the searchbar by updating visiblePhotos
     const searchItems = (searchValue) => {

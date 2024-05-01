@@ -5,6 +5,7 @@ import Link from "next/link";
 import Script from 'next/script';
 import SearchFilter from '../Components/SearchFilter';
 import Navbar from '../Components/Navbar';
+import Image from 'next/image';
 
 export async function getServerSideProps() {
 
@@ -41,7 +42,13 @@ export default function Home() {
             </div>
             <div className="about-body">
                 <div className="about-photo-container">
-                    <img className="about-photo" src="https://bobreuterphotoarchive-vercel.b-cdn.net/Reuter_0456%20Bob%20Reuter_0.jpg" />
+                    <Image 
+                      className="about-photo" 
+                      src="https://bobreuterphotoarchive-vercel.b-cdn.net/Reuter_0456%20Bob%20Reuter_0.jpg" 
+                      alt="Picture of artist"
+                      layout="fill"
+                      objectFit="cover"
+                    />
                 </div>
                 <div className="about-bio-container">
                     <p className="about-bio-paragraph">
@@ -61,8 +68,14 @@ export default function Home() {
                     </p>
                 </div>
                 <div className="cowboy-angel-container">
-                    <Link href="/">
-                      <img className="about-photo" src="https://bobreuterphotoarchive-vercel.b-cdn.net/Reuter_0273.jpg" />
+                    <Link href="/" legacyBehavior passHref>
+                      <Image 
+                        className="about-photo" 
+                        src="https://bobreuterphotoarchive-vercel.b-cdn.net/Reuter_0273.jpg" 
+                        alt="Picture of artist"
+                        layout="fill"
+                        objectFit="cover"
+                      />
                     </Link>
                 </div>
             </div>

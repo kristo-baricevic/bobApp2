@@ -14,7 +14,7 @@ if (!MONGODB_DB) {
     )
 }
 
-let cached = global.mongo
+var cached = global.mongo
 
 if (!cached) {
 cached = global.mongo = { conn: null, promise: null }

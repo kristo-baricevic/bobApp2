@@ -21,6 +21,12 @@ export default function Navbar() {
             <Link href="/about" legacyBehavior passHref>
               <a>About</a>
             </Link>
+            <Link href="/music" legacyBehavior passHref>
+              <a>Music</a>
+            </Link>
+            <Link href="/radio" legacyBehavior passHref>
+              <a>Radio</a>
+            </Link>
             <a href="https://collections.shsmo.org/manuscripts/saint-louis/s0368">
               Official Archive at UMSL
             </a>
